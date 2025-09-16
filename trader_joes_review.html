@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web Site Critiques — Project 1</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #111111;
+      --muted: #666666;
+      --accent: #0b5fff;
+      --card: #f6f7f9;
+      --border: #e5e7eb;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0d12;
+        --fg: #e8eaed;
+        --muted: #a7b0bd;
+        --accent: #6ea8fe;
+        --card: #141821;
+        --border: #2a3140;
+      }
+    }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.6; }
+    main { max-width: 900px; margin: 48px auto; padding: 0 20px; }
+    h1 { font-size: clamp(1.8rem, 2.5vw + 1rem, 2.6rem); margin: 0 0 10px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 28px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; }
+    h2, h3 { margin-top: 1.8rem; }
+    ol { padding-left: 1.3rem; }
+    a { color: var(--accent); }
+    .q { font-weight: 600; }
+    .answer { margin: 6px 0 16px; }
+    .url { display:inline-block; padding: 2px 8px; border-radius: 999px; background: var(--bg); border: 1px solid var(--border); color: var(--muted); font-size: 0.9rem; }
+    .note { font-size: 0.92rem; color: var(--muted); }
+    footer { margin-top: 40px; font-size: 0.9rem; color: var(--muted); }
+    code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .hint { border-left: 3px solid var(--accent); padding: 10px 12px; background-color: rgba(11, 95, 255, 0.08); border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Web Site Critiques</h1>
+    <div class="meta">INFO 2450 — Project 1 • Prepared September 15, 2025</div>
+
+    <section class="card">
+      <h2>Question List</h2>
+      <ol>
+        <li>What was your first impression of this site?</li>
+        <li>How does this site organize the flow of information?</li>
+        <li>Does the site structure make sense or does it confuse you? Why?</li>
+        <li>Does the site graphics/layout/multimedia enhance the site or detract from it? Why?</li>
+        <li>How long did it take for the home page to load? Was the load time reasonable?</li>
+        <li>Was the text color and size readable? If a background color or image was used, did it enhance or detract from the site?</li>
+        <li>Did the site have a navigation bar or other navigation tool? Was the navigation well done?</li>
+        <li>Did the site have a color scheme or look and feel that was repeated on all the pages?</li>
+        <li>How does the site respond to smaller window sizes (responsive design)?</li>
+        <li>What does this site offer that was unusual or very well done?</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Site Review</h2>
+      <h3 id="site-name">Trader Joe's — <span class="url"><span class="mono">https://www.traderjoes.com</span></span></h3>
+
+      <p><span class="q">1) First impression:</span></p>
+      <p class="answer">The site felt simple, but put together well.</p>
+
+      <p><span class="q">2) Information flow:</span></p>
+      <p class="answer">Most of the flow is from the drop down in the top left, and the front page is almost blog-style esque.</p>
+
+      <p><span class="q">3) Structure makes sense?</span></p>
+      <p class="answer">I don't love it because you have to click on things. I would like pop-ups as I hover over them. Also, I don't love the intro page; I want to see something visual on the front page that directs me in the right direction.</p>
+
+      <p><span class="q">4) Graphics/layout/multimedia:</span></p>
+      <p class="answer">The background and the background of the shapes on top are the same, making it feel clunky. Black on black or white on white isn't great to me — they should be different shades so the front image stands out.</p>
+
+      <p><span class="q">5) Load time:</span></p>
+      <p class="answer">It loaded near instantly. Totally happy with it.</p>
+
+      <p><span class="q">6) Readability & background:</span></p>
+      <p class="answer">Most sites are actually smaller or larger than I like to see, but Trader Joe's was pleasantly in the middle.</p>
+
+      <p><span class="q">7) Navigation quality:</span></p>
+      <p class="answer">I never use search bars unless I can't find something because they're usually terrible. In this case I felt like it wasn't super useful, as I kept getting blog-post type results instead of products.</p>
+
+      <p><span class="q">8) Consistent look & feel:</span></p>
+      <p class="answer">The scheme felt warm and inviting, like a grandma's kitchen. I suspect Trader Joe's wanted that on purpose.</p>
+
+      <p><span class="q">9) Responsive behavior:</span></p>
+      <p class="answer">Surprisingly well done. I didn't have to use the horizontal scroll bar; it resized well until extremely small window sizes.</p>
+
+      <p><span class="q">10) Notable strengths:</span></p>
+      <p class="answer">I see a lot of sites with popups, but these popups were all colored differently, which almost didn't fit the vibe of the site. I especially found it frustrating finding the X's to shut the popups off.</p>
+    </section>
+
+    
+  </main>
+</body>
+</html>
