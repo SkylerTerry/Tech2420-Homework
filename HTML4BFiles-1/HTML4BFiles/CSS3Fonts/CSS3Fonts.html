@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CSS3 Embedded Fonts</title>
+
+<style>
+/* Step 1: Font embedding */
+@font-face {
+    font-family: "BleedingCowboys";
+    src: url("fonts/BleedingCowboys.eot");
+    src: local("BleedingCowboys"), url("fonts/BleedingCowboys.ttf") format("truetype");
+}
+
+body {
+    font-family: "BleedingCowboys", Geneva, serif;
+    font-size: 20px;
+    background-color: #fafafa; /* LIGHT background for visibility */
+    color: #222;
+    margin: 40px;
+}
+
+/* Consistent card style for sections */
+.section {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* Step 2: Border Radius Example */
+.rounded {
+    border: 3px solid #333;
+    border-radius: 40px 0 40px 0;
+}
+
+/* Step 3: Shadows */
+.shadow-box {
+    border: 2px solid #555;
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.3);
+    background-color: #fdfdfd;
+}
+
+.shadow-text {
+    text-shadow: 2px 2px 4px rgba(50, 50, 50, 0.7);
+    font-size: 1.5em;
+}
+
+/* Step 4: Border Image */
+.fancy-border {
+    border: 20px solid transparent;
+    border-image: url("border.png") 50 round;
+}
+
+/* Step 5: Background Image */
+.background-box {
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    border-radius: 12px;
+}
+
+/* Step 6: Word Wrap */
+.wrap-box {
+    width: 220px;
+    border: 1px solid #000;
+    word-wrap: break-word;
+    background-color: #fff;
+}
+</style>
+</head>
+<body>
+
+<p class="section">What is your favorite Western movie? This font is called Bleeding Cowboys.</p>
+
+<div class="section rounded">
+    <p>This box uses <strong>border-radius</strong> with mixed corners.</p>
+</div>
+
+<div class="section shadow-box">
+    <p class="shadow-text">This text has a shadow!</p>
+</div>
+
+<div class="section fancy-border">
+    <p>This box uses <strong>border-image</strong> with a custom image border.</p>
+</div>
+
+<div class="section background-box">
+    <p>This box uses a full-width background image with <strong>background-size: cover</strong>.</p>
+</div>
+
+<div class="section wrap-box">
+    This box shows word-wrap behavior with a verylooooooooooooooooooooooooooongwordthatwouldnormallyoverflow.
+</div>
+
+</body>
+</html>
