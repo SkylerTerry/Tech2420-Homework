@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Practice 6A - Tables</title>
+  <style>
+    /* Shared table styling from the book + a few quality-of-life tweaks */
+    table { border-collapse: collapse; margin: 1rem 0; }
+    caption { font-weight: 700; margin-bottom: .35rem; }
+    th, td { border: 1px solid gray; padding: .35rem .5rem; }
+    thead th { text-align: left; }
+  </style>
+</head>
+<body>
+  <h1>Practice 6A – Tables</h1>
+
+  <!-- EXERCISE 8-1: Making a simple table -->
+  <section aria-labelledby="ex8-1">
+    <h2 id="ex8-1">Exercise 8-1: Simple Table</h2>
+    <table>
+      <caption>Beatles Albums</caption>
+      <thead>
+        <tr>
+          <th scope="col">Album</th>
+          <th scope="col">Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Rubber Soul</td><td>1965</td></tr>
+        <tr><td>Revolver</td><td>1966</td></tr>
+        <tr><td>Sgt. Pepper's</td><td>1967</td></tr>
+        <tr><td>The White Album</td><td>1968</td></tr>
+        <tr><td>Abbey Road</td><td>1969</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- EXERCISE 8-2: Column spans -->
+  <section aria-labelledby="ex8-2">
+    <h2 id="ex8-2">Exercise 8-2: Column Spans</h2>
+    <table>
+      <caption>Sunday Evening TV Schedule</caption>
+      <thead>
+        <tr>
+          <th scope="col">7:00pm</th>
+          <th scope="col">7:30pm</th>
+          <th scope="col">8:00pm</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="3"><strong>The Sunday Night Movie</strong></td>
+        </tr>
+        <tr>
+          <td>Perry Mason</td>
+          <td colspan="2">Candid Camera | What’s My Line?</td>
+        </tr>
+        <tr>
+          <td>Bonanza</td>
+          <td colspan="2">The Wackiest Ship in the Army</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- EXERCISE 8-3: Row spans -->
+  <section aria-labelledby="ex8-3">
+    <h2 id="ex8-3">Exercise 8-3: Row Spans</h2>
+    <table>
+      <caption>Fruit Grid (with Row Spans)</caption>
+      <tbody>
+        <tr>
+          <td>apples</td>
+          <td rowspan="2">oranges</td>
+          <td rowspan="2">pears</td>
+        </tr>
+        <tr>
+          <td>bananas</td>
+        </tr>
+        <tr>
+          <td>lychees</td>
+          <td></td><!-- empty cell because "oranges" spanned only the first two rows -->
+          <td>pineapple</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</body>
+</html>

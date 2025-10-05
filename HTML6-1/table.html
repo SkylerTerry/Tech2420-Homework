@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practice 6A - Tables</title>
+
+<style>
+/* === Global Styling === */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 40px;
+  text-align: center;
+}
+
+/* Div centers the table (Step 3) */
+.center-div {
+  text-align: center;
+}
+
+/* Core table formatting */
+.center-table {
+  margin: auto;
+  width: 550px;
+  border-collapse: separate;   /* allows border-spacing to work */
+  border-spacing: 0px;         /* replaces cellspacing="0" */
+  border: 2px solid black;
+}
+
+/* Caption formatting (Step 5) */
+.caption-style {
+  color: #003300;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 8px;
+}
+
+/* Column group formatting (Step 6) */
+.time-col {
+  background-color: #CCCCCC;
+  width: 25%;
+}
+.days-col {
+  background-color: #99FF66;
+  width: 15%;
+}
+
+/* Cell styling (Step 3 & 7) */
+th, td {
+  border: 1px solid black;
+  padding: 5px;          /* replaces cellpadding="5" */
+  text-align: center;
+}
+.day-head {
+  background-color: #99FF66;   /* for day header cells */
+}
+
+/* === Table 2: Product List Styles === */
+.product-table {
+  width: 400px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  border: 2px solid black;
+}
+.product-table th {
+  background-color: #e0f0ff;
+}
+.product-table caption {
+  color: darkblue;
+  font-weight: bold;
+  padding: 6px;
+}
+
+/* === Table 3: Student Grades Styles === */
+.grades-table {
+  width: 400px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  border: 2px solid black;
+}
+.grades-table th {
+  background-color: #ffcccc;
+}
+.grades-table td {
+  background-color: #fff6f6;
+}
+.grades-table caption {
+  color: darkred;
+  font-weight: bold;
+  padding: 6px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- === TABLE 1: My Class Schedule === -->
+<div class="center-div">
+  <table class="center-table">
+    <caption class="caption-style">My Class Schedule</caption>
+
+    <colgroup class="time-col"></colgroup>
+    <colgroup class="days-col" span="5"></colgroup>
+
+    <tr>
+      <th>Time</th>
+      <th class="day-head">Monday</th>
+      <th class="day-head">Tuesday</th>
+      <th class="day-head">Wednesday</th>
+      <th class="day-head">Thursday</th>
+      <th class="day-head">Friday</th>
+    </tr>
+    <tr>
+      <th>8:00 – 9:00</th>
+      <td>Math</td>
+      <td rowspan="2">English</td>
+      <td>Math</td>
+      <td rowspan="3">Science</td>
+      <td>Gym</td>
+    </tr>
+    <tr>
+      <th>9:00 – 10:00</th>
+      <td>History</td>
+      <td>History</td>
+      <td>Music</td>
+    </tr>
+    <tr>
+      <th>10:00 – 11:00</th>
+      <td colspan="2">Computer Lab</td>
+      <td>Art</td>
+      <td>Free</td>
+    </tr>
+    <tr>
+      <th>11:00 – 12:00</th>
+      <td>Lunch</td>
+      <td>Lunch</td>
+      <td>Lunch</td>
+      <td>Lunch</td>
+      <td>Lunch</td>
+    </tr>
+  </table>
+</div>
+
+<!-- === TABLE 2: Product Price List === -->
+<div class="center-div">
+  <table class="product-table">
+    <caption>Product Price List</caption>
+    <tr><th>Product</th><th>Price</th></tr>
+    <tr><td>Backpack</td><td>$39.99</td></tr>
+    <tr><td>Sleeping Bag</td><td>$79.99</td></tr>
+    <tr><td>Tent</td><td>$149.99</td></tr>
+    <tr><td>Lantern</td><td>$24.99</td></tr>
+  </table>
+</div>
+
+<!-- === TABLE 3: Student Grades === -->
+<div class="center-div">
+  <table class="grades-table">
+    <caption>Student Grades</caption>
+    <tr><th>Student</th><th>Subject</th><th>Grade</th></tr>
+    <tr><td>Amy</td><td>Math</td><td>A</td></tr>
+    <tr><td>Josh</td><td>Science</td><td>B+</td></tr>
+    <tr><td>Emma</td><td>English</td><td>A-</td></tr>
+    <tr><td>Liam</td><td>History</td><td>B</td></tr>
+  </table>
+</div>
+
+</body>
+</html>
