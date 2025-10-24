@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bistro Items To Go</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  /* page base */
+  html { box-sizing: border-box; }
+  *, *::before, *::after { box-sizing: inherit; }
+  body { font-family: Georgia, serif; line-height: 1.5; margin: 0; padding: 20px; background:#fff; color:#333; }
+
+  /* outer flex container (EX 16-2) */
+  #menu{
+    border: 3px solid #783F27;
+    display: flex;           /* make the menu a flex container */
+    flex-wrap: wrap;         /* allow items to wrap to new rows */
+    justify-content: center; /* center items on the main axis */
+    align-items: flex-start; /* align items to the start of cross axis */
+    gap: 10px;
+    padding: 10px;
+    background:#fff;
+  }
+
+  /* title card */
+  .title{
+    background-color:#783F27;
+    color:#F9AB33;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:0 16px;
+    min-width: 200px;
+  }
+  .title h1{
+    font-weight: normal;
+    font-size: 2.4rem;
+    line-height: 1.1;
+    margin: 16px 0;
+    text-align:center;
+  }
+
+  /* each dish card (EX 16-2 nested flex) */
+  section.dish{
+    background:#F6F3ED;
+    border:1px dotted maroon;
+    padding: 16px;
+    width: 240px;            /* visual width like the book */
+    display:flex;            /* nested flex container */
+    flex-direction: column;  /* stack elements vertically */
+    gap: 10px;
+    /* EX 16-3: make cards flexible so they fill available space */
+    flex: auto;              /* equals: flex: 1 1 auto */
+  }
+
+  h2{ font-size:1.1rem; margin:0; }
+  .info{ margin:0; }
+
+  /* photo first (EX 16-3 order) */
+  .photo{ order: -1; margin:0; }
+  .photo img{ width:100%; height:auto; display:block; }
+
+  /* price pinned to bottom (EX 16-2 nested flex + margin auto trick) */
+  .price{
+    margin-top: auto;        /* pushes price to bottom of the card */
+    font-weight: bold;
+    background:#F9AB33;
+    color:#000;
+    padding:6px 8px;
+    text-align:center;
+  }
+</style>
+</head>
+
+<body>
+
+<div id="menu">
+
+  <section class="title">
+    <h1>Bistro Items To Go</h1>
+  </section>
+
+  <section class="dish">
+    <h2>Black Bean Purses</h2>
+    <p class="info">Spicy black beans and a blend of Mexican cheeses wrapped in phyllo and baked until golden.</p>
+    <p class="photo"><img src="table.jpg" alt="Black bean purses on a plate"></p>
+    <p class="price">$3.95</p>
+  </section>
+
+  <section class="dish">
+    <h2>Southwestern Napoleons</h2>
+    <p class="info">Layers of lump crab, bean &amp; corn salsa, and our handmade tortillas.</p>
+    <p class="photo"><img src="table.jpg" alt="Southwestern Napoleons"></p>
+    <p class="price">$7.95</p>
+  </section>
+
+  <section class="dish">
+    <h2>Coconut-Corn Chowder</h2>
+    <p class="info">Vegan chowder with potatoes and corn in a light coconut broth.</p>
+    <p class="photo"><img src="table.jpg" alt="Coconut-Corn Chowder"></p>
+    <p class="price">$3.95</p>
+  </section>
+
+  <section class="dish">
+    <h2>Jerk Rotisserie Chicken</h2>
+    <p class="info">Slow-roasted chicken with spicy jerk sauce, fried plantains, and mango. <em>Very spicy!</em></p>
+    <p class="photo"><img src="table.jpg" alt="Jerk Rotisserie Chicken"></p>
+    <p class="price">$12.95</p>
+  </section>
+
+  <section class="dish">
+    <h2>Thai Shrimp Kebabs</h2>
+    <p class="info">Shrimp marinated in lemongrass, garlic, and fish sauce then grilled.</p>
+    <p class="photo"><img src="table.jpg" alt="Thai Shrimp Kebabs"></p>
+    <p class="price">$12.95</p>
+  </section>
+
+  <section class="dish">
+    <h2>Pasta Puttanesca</h2>
+    <p class="info">Tomato sauce with garlic, olives, capers, anchovies, and red pepper.</p>
+    <p class="photo"><img src="table.jpg" alt="Pasta Puttanesca"></p>
+    <p class="price">$12.95</p>
+  </section>
+
+</div>
+
+</body>
+</html>
