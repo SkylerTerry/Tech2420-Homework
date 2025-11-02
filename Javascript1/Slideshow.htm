@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>JavaScript Practice 1 - Slideshow</title>
+
+<style type="text/css">
+  .flashclass {
+    height: 200px;
+    width: 200px; /* define a width for transitions to work */
+    border: 5px solid orange;
+    padding: 5px;
+  }
+  .flashclass img { border-width: 0; }
+</style>
+
+<script type="text/javascript" src="transitionshow.js">
+/***********************************************
+* Random Transitions Slideshow- by JavaScript Kit (www.javascriptkit.com)
+* This notice must stay intact for usage
+***********************************************/
+</script>
+</head>
+<body>
+
+<script type="text/javascript">
+  var flashyshow = new flashyslideshow({
+    wrapperid: "myslideshow",
+    wrapperclass: "flashclass",
+    imagearray: [
+      /* [imagePath, link(optional), target(optional), caption(optional)] */
+      ["Images/Slideshow/autumn.jpg", "http://www.javascriptkit.com/script/script2/transitionshow.shtml", "_blank", "Ah, the cool breeze of autumn."],
+      ["Images/Slideshow/spring.jpg", "", "", "Flowers spring back to life in the Spring."],
+      ["Images/Slideshow/winter.jpg", "", "", "Winter is nice, as long as there's snow right?"],
+      ["Images/Slideshow/summer.jpg", "", "", "Such a nice Summer getaway"]
+    ],
+    pause: 2000,
+    transduration: 1000
+  });
+</script>
+
+</body>
+</html>

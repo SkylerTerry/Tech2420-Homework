@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>JavaScript Practice 1 - EventHandler</title>
+<script type="text/javascript">
+<!-- Beginning of JavaScript -
+  function MsgBox(textstring) {
+    alert("You typed: " + textstring);
+    document.myForm.myText.value = "";
+  }
+// - End of JavaScript - -->
+</script>
+</head>
+<body>
+  <h1>JavaScript Event Handler Example</h1>
+  <form name="myForm">
+    <input name="myText" type="text" />
+    <input name="submit" type="button" value="Show Me" onClick="MsgBox(myForm.myText.value)" />
+  </form>
+  <p>Change <code>onClick</code> to <code>onmouseover</code> to trigger on hover.</p>
+</body>
+</html>
