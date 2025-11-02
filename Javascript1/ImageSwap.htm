@@ -4,37 +4,27 @@
 <meta charset="UTF-8" />
 <title>JavaScript Practice 1 - Image Swap</title>
 <style type="text/css">
-  body {
-    background-color: #111;
-    color: #fff;
-    font-family: Arial, sans-serif;
-  }
+  body { background:#111; color:#fff; font-family: Arial, sans-serif; }
   #thumbs, #image {
-    width: 680px;
-    border: 1px solid #000;
-    text-align: center;
-    margin: 0 auto;
-    background: #333;
-    padding: 5px;
+    width: 680px; border: 1px solid #000; text-align: center;
+    margin: 0 auto; background: #333; padding: 5px;
   }
   #thumbs { margin-top: 10px; }
   #thumbs img { border: 1px solid #000; margin: 5px; cursor: pointer; }
-  #image { height: 500px; }
-  .instructions { font-style: italic; color: #ccc; }
+  #image { min-height: 480px; }
+  .instructions { font-style: italic; color: #ccc; text-align:center; }
 </style>
 
 <script type="text/javascript">
-<!-- Begin comment for older browsers
-  // Array of large images
-  var imgArray = [
-    'CoupleSailingLg.jpg',
-    'PigLg.jpg',
-    'SaladLg.jpg',
-    'StorkLg.jpg',
-    'HamsterLg.jpg' // Fifth image
+  // Large image *base names* (no extension so we can try .jpg then .JPG)
+  var imgBaseNames = [
+    'CoupleSailingLg',
+    'PigLg',
+    'SaladLg',
+    'StorkLg',
+    'HamsterLg'
   ];
 
-  // Array of titles
   var titleArray = [
     'Newlyweds Sailing',
     'Boy and His Pig',
@@ -43,36 +33,56 @@
     'Hamster Hero'
   ];
 
-  // Corrected consistent image path (capital S)
-  var imgPath = "Images/FullSize/";
+  var baseFullSize = 'Images/FullSize/';
 
-  // Function to swap large image and caption
-  function swapImage(imgID) {
+  function setLargeImage(baseName, title) {
     var theImage = document.getElementById('theImage');
     var textDiv  = document.getElementById('bottomText');
-    var newImg   = imgArray[imgID];
-    var textTitle= titleArray[imgID];
 
-    theImage.src = imgPath + newImg;
-    textDiv.innerHTML = textTitle;
+    // Try lowercase .jpg first
+    var firstTry = baseFullSize + baseName + '.jpg';
+    var fallback = baseFullSize + baseName + '.JPG';
+
+    // Clear any previous handler to avoid loops
+    theImage.onerror = null;
+
+    // If .jpg fails, try .JPG once
+    theImage.onerror = function () {
+      theImage.onerror = function () {
+        console.error('Image failed to load:', theImage.src);
+        textDiv.innerHTML = '⚠️ Could not load: ' + theImage.src;
+      };
+      theImage.src = fallback;
+    };
+
+    theImage.src = firstTry;
+    textDiv.innerHTML = title;
   }
 
-  // Preload large images
+  function swapImage(idx) {
+    setLargeImage(imgBaseNames[idx], titleArray[idx]);
+  }
+
   function preloadImages() {
-    for (var i = 0; i < imgArray.length; i++) {
-      var tmpImg = new Image();
-      tmpImg.src = imgPath + imgArray[i];
+    for (var i = 0; i < imgBaseNames.length; i++) {
+      var a = new Image();
+      a.src = baseFullSize + imgBaseNames[i] + '.jpg';
+      var b = new Image();
+      b.src = baseFullSize + imgBaseNames[i] + '.JPG';
     }
   }
-// End comment for older browsers -->
+
+  function init() {
+    preloadImages();
+    // set the default large image using the same logic as swaps
+    swapImage(0);
+  }
 </script>
 </head>
 
-<body onload="preloadImages()">
+<body onload="init()">
   <h1 style="text-align:center;">Image Swap Example</h1>
-  <p class="instructions" style="text-align:center;">
-    Mouse over a thumbnail below to view the larger image and title.
-  </p>
+  <p class="instructions">Mouse over a thumbnail to view the larger image and title.</p>
 
   <div id="thumbs">
     <img src="Images/Thumbnails/CoupleSailingSm.jpg" alt="Couple Sailing" onmouseover="swapImage(0)" />
@@ -83,9 +93,9 @@
   </div>
 
   <div id="image">
-    <!-- Default image -->
-    <img id="theImage" src="Images/FullSize/CoupleSailingLg.jpg" alt="Large display" />
-    <h3 id="bottomText">Newlyweds Sailing</h3>
+    <!-- Large image is set by JS so the same path logic applies -->
+    <img id="theImage" src="" alt="Large display" />
+    <h3 id="bottomText">Loading…</h3>
   </div>
 </body>
 </html>
