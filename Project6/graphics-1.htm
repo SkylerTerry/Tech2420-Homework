@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Extreme Honeymoons - Graphics</title>
+
+<style type="text/css">
+  body { font-family: Trebuchet MS, Arial, sans-serif; }
+
+  /* Large image + thumbnail containers */
+  #thumbs, #image {
+    width: 700px;
+    border: 1px solid #000;
+    text-align: center;
+    margin: 0 auto;
+    color: #000;
+    background: #eee;
+    padding: 5px;
+  }
+  #thumbs { margin-top: 10px; }
+  #thumbs img {
+    border: 1px solid #000;
+    margin: 5px;
+    width: 140px;   /* adjust if your thumbs are a different size */
+    height: 80px;   /* keep aspect ratio with your fullsize */
+    cursor: pointer;
+  }
+  #image { height: 400px; }
+
+  .instructions { font-style: italic; }
+
+  /* Simple utility spacing */
+  .spacer { height: 24px; }
+  
+  #image img {
+  display: block;
+  margin: 0 auto 10px auto;  /* centers + adds space below */
+}
+#bottomText {
+  margin-top: 8px;
+  color: #fff;               /* change to match dark background */
+  position: relative;
+  z-index: 1;                /* keeps text above background */
+}
+
+</style>
+
+<script type="text/javascript">
+  /* ========= PRELOADS FOR ROLLOVERS ========= */
+  var print1 = new Image();
+  var print2 = new Image();
+  var logo1  = new Image();
+  var logo2  = new Image();
+
+  /* Update these to your actual filenames in /Images */
+  print1.src = "Images/print1.jpg";
+  print2.src = "Images/print2.jpg";
+  logo1.src  = "Images/Logo.jpg";
+  logo2.src  = "Images/Logo2.jpg";
+
+  /* Helper for rollovers that won't conflict with image-swap */
+  function swapMe(id, which) {
+    // id is the id of the <img> to swap, which is an Image object (e.g., print2 or print1)
+    var el = document.getElementById(id);
+    if (el && which && which.src) el.src = which.src;
+  }
+
+  /* ========= IMAGE SWAP ARRAYS =========
+     Fullsize images live in:  /Images/Fullsize/
+     Thumbnails live in:       /Images/Thumbnails/
+
+     NOTE: Make sure your thumbnail files exist with the SAME names used below,
+     placed in /Images/Thumbnails/. If your thumbs are different names, just
+     change the <img src> paths in the #thumbs section to match.
+  */
+  var imgArray = [
+    "bowhunt1.jpg",
+    "CoupleEveningLg.jpg",
+    "HeliSkiingLg.jpg",
+    "ScubaCoupleLg.jpg"
+  ];
+
+  var titleArray = [
+    "Couple Bowhunting Adventure",
+    "Romantic Mountain Sunset",
+    "Heli-Skiing in the Alps",
+    "Scuba Diving for Two"
+  ];
+
+  var imgPath = "Images/Fullsize/";
+
+  function swapImage(imgID) {
+    var theImage = document.getElementById("theImage");
+    var textDiv  = document.getElementById("bottomText");
+
+    var newImg   = imgArray[imgID];
+    var newTitle = titleArray[imgID];
+
+    theImage.src = imgPath + newImg;
+    textDiv.innerHTML = newTitle;
+  }
+
+  function preloadImages() {
+    /* Preload fullsize images for smooth swapping */
+    for (var i = 0; i < imgArray.length; i++) {
+      var tmp = new Image();
+      tmp.src = imgPath + imgArray[i];
+    }
+  }
+</script>
+</head>
+
+<body onload="preloadImages()">
+  <div style="text-align:center;">
+
+    <!-- ======= PRINT BUTTON ROLLOVER ======= -->
+    <!-- Files expected: /Images/print1.jpg and /Images/print2.jpg at 200x50 -->
+    <a href="#"
+       onmouseover="swapMe('printBtn', print2);"
+       onmouseout="swapMe('printBtn', print1);">
+      <img id="printBtn"
+           src="Images/print1.jpg"
+           alt="Print Page"
+           width="200" height="50"
+           style="border:none;" />
+    </a>
+
+    <div class="spacer"></div>
+
+    <!-- ======= LOGO ROLLOVER ======= -->
+    <!-- Files expected: /Images/Logo1.jpg and /Images/Logo2.jpg (same dimensions) -->
+    <a href="#"
+       onmouseover="swapMe('logoImg', logo2);"
+       onmouseout="swapMe('logoImg', logo1);">
+      <img id="logoImg"
+           src="Images/Logo.jpg"
+           alt="Extreme Honeymoons Logo"
+           style="border:none; max-width: 220px; height: auto;" />
+    </a>
+
+    <div class="spacer"></div><div class="spacer"></div>
+
+    <!-- ======= THUMBNAILS ======= -->
+    <div id="thumbs">
+      <!-- Thumbnails expected at: /Images/Thumbnails/<same-filenames-as-fullsize> -->
+      <img src="Images/Thumbnails/bowhunt1.jpg"        alt="Couple Bowhunting Adventure" onmouseover="swapImage(0);" />
+      <img src="Images/Thumbnails/CoupleEveningLg.jpg" alt="Romantic Mountain Sunset"     onmouseover="swapImage(1);" />
+      <img src="Images/Thumbnails/HeliSkiingLg.jpg"    alt="Heli-Skiing in the Alps"      onmouseover="swapImage(2);" />
+      <img src="Images/Thumbnails/ScubaCoupleLg.jpg"   alt="Scuba Diving for Two"         onmouseover="swapImage(3);" />
+    </div>
+
+    <!-- ======= LARGE IMAGE DISPLAY ======= -->
+    <div id="image">
+      <!-- Start on the first image; set width/height to match your container (700x400) -->
+      <img id="theImage"
+           src="Images/Fullsize/bowhunt1.jpg"
+           alt="Couple Bowhunting Adventure"
+           width="700" height="400" />
+      <h3 id="bottomText">Couple Bowhunting Adventure</h3>
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- ======= 2-COLUMN BACKGROUND PREVIEW (for Project 7) ======= -->
+    <!-- File expected: /Images/2colback.jpg sized 900x150 -->
+    <img src="Images/2colback.jpg" alt="Two-column background preview" />
+
+    <div class="spacer"></div>
+
+    <!-- W3C Validator Badge -->
+    <p>
+      <a href="http://validator.w3.org/check?uri=referer">
+        <img src="http://www.w3.org/Icons/valid-xhtml10"
+             alt="Valid XHTML 1.0 Transitional" height="31" width="88" />
+      </a>
+    </p>
+  </div>
+</body>
+</html>
