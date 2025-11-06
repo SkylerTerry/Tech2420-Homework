@@ -47,14 +47,14 @@
 
 <script type="text/javascript">
   /* ========= PRELOADS FOR ROLLOVERS ========= */
-  var print1 = new Image();
-  var print2 = new Image();
+  var Print1 = new Image();
+  var Print2 = new Image();
   var logo1  = new Image();
   var logo2  = new Image();
 
   /* Update these to your actual filenames in /Images */
-  print1.src = "Images/Print1.jpg";
-  print2.src = "Images/Print2.jpg";
+  Print1.src = "Images/Print1.jpg";
+  Print2.src = "Images/Print2.jpg";
   logo1.src  = "Images/Logo.jpg";
   logo2.src  = "Images/Logo2.jpg";
 
@@ -113,17 +113,22 @@
 <body onload="preloadImages()">
   <div style="text-align:center;">
 
-    <!-- ======= PRINT BUTTON ROLLOVER ======= -->
-    <!-- Files expected: /Images/print1.jpg and /Images/print2.jpg at 200x50 -->
-    <a href="#"
-       onmouseover="swapMe('printBtn', print2);"
-       onmouseout="swapMe('printBtn', print1);">
-      <img id="printBtn"
-           src="Images/print1.jpg"
-           alt="Print Page"
-           width="200" height="50"
-           style="border:none;" />
-    </a>
+   <!-- PRINT BUTTON (direct swap on the <img>) -->
+<img
+  id="printBtn"
+  src="Images/Print1.jpg"
+  alt="Print Page"
+  width="200"
+  height="50"
+  style="border:none; cursor:pointer;"
+  onmouseover="this.src='Images/Print2.jpg';"
+  onmouseout="this.src='Images/Print1.jpg';"
+  onfocus="this.src='Images/Print2.jpg';"
+  onblur="this.src='Images/Print1.jpg';"
+  ontouchstart="this.src='Images/Print2.jpg';"
+  ontouchend="this.src='Images/Print1.jpg';"
+/>
+
 
     <div class="spacer"></div>
 
