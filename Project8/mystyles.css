@@ -1,0 +1,240 @@
+/* =========================================
+   Global & Layout Styles – Project 7
+   ========================================= */
+
+/* Whole page (outside the 900px layout area) */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background-color: #f0f6f9;   /* from your Site Design */
+}
+
+/* Main fixed-width centered layout wrapper */
+#container {
+    width: 900px;        /* required width */
+    margin: 0 auto;      /* centers the container */
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   Header & Navigation
+   ========================================= */
+
+header {
+    width: 900px;
+    height: 150px;
+	background-image: url(Images/2colback.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+    border-bottom: 2px solid #004d73;
+    position: relative;
+   
+}
+
+/* Logo image in header */
+#logoImg {
+    float: left;
+    margin: 15px;
+    max-height: 120px;
+}
+
+/* Banner image in header */
+#bannerImg {
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
+    max-height: 110px;
+}
+
+/* Navigation box inside header – floats right (about 30% width) */
+nav {
+    float: right;
+    width: 30%;              /* roughly 270px of the 900px */
+    padding: 20px 10px 0 10px;
+    box-sizing: border-box;
+}
+
+/* Navigation list reset */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Space between nav buttons */
+nav li {
+    margin-bottom: 8px;
+}
+
+/* Navigation links styled like buttons */
+nav a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 8px 6px;
+    background-color: #0077aa;
+    color: #ffffff;
+    border-radius: 4px;
+    border: 2px solid #004d73;
+}
+
+/* Hover pseudo-class for nav links – must look different */
+nav a:hover {
+    background-color: #ffffff;
+    color: #004d73;
+}
+
+/* General link styles (outside nav) */
+a {
+    color: #0077aa;
+}
+
+a:hover {
+    color: #004d73;
+}
+
+/* =========================================
+   Section (background image area) & Article
+   ========================================= */
+
+/* Section box – has the repeating background image */
+section {
+    width: 900px;
+    background-image: url('Images/backimage.jpg');  /* or .gif/.png as named */
+    background-repeat: repeat-y;                    /* required in instructions */
+    overflow: hidden;                               /* contain floated children */
+    box-sizing: border-box;
+}
+
+/* Main content article inside section */
+article {
+    width: 800px;           /* required ~800px */
+    margin: 0 auto;         /* centers inside 900px section */
+    padding: 15px 20px 25px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-sizing: border-box;
+    text-align: left;       /* paragraphs must NOT be centered */
+}
+
+/* Headings inside article */
+article h1 {
+    color: #004d73;
+    margin-top: 0;
+}
+
+article h2 {
+    color: #004d73;
+    margin-top: 35px;
+}
+
+/* Paragraph styling for readability */
+article p {
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+/* =========================================
+   Thumbnail Swap & Large Image Area
+   ========================================= */
+
+/* Shared box style for thumbnails & image */
+#thumbs,
+#image {
+    width: 700px;
+    margin: 10px auto;
+    text-align: center;
+    background-color: #eeeeee;
+    border: 1px solid #000000;
+    padding: 5px;
+    box-sizing: border-box;
+}
+/* Clear floats after image and thumbnail sections */
+#image::after,
+#thumbs::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+#thumbs {
+    margin-top: 15px;
+}
+
+/* Thumbnail images */
+#thumbs img {
+    border: 1px solid #000000;
+    margin: 5px;
+    width: 140px;   /* match your Project 6 setup */
+    height: 80px;
+    cursor: pointer;
+}
+
+/* Large image display box */
+#image {
+    height: 400px;
+}
+
+/* Large image styling */
+#image img {
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+/* Title text under the large image */
+#bottomText {
+    margin-top: 8px;
+    color: #000000;
+}
+
+/* =========================================
+   Mini Tribute Area
+   ========================================= */
+
+#miniTribute {
+    margin-top: 20px;
+    overflow: hidden;      /* contain floated image */
+}
+
+/* Mini tribute image on the left */
+#miniTribute .miniTributeImg {
+    float: left;
+    margin: 0 15px 10px 0;
+    max-width: 200px;
+    height: auto;
+}
+
+/* Mini tribute paragraph wraps around the image */
+#miniTribute p {
+    overflow: hidden;
+    line-height: 1.5;
+}
+
+/* =========================================
+   Footer
+   ========================================= */
+
+footer {
+    width: 900px;
+    background-color: #CCCCCC;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 2px solid #004d73;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #0077aa;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

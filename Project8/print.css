@@ -1,0 +1,125 @@
+/* =========================================
+   PRINT STYLESHEET — Project 8
+   Automatically applied only in print mode
+   ========================================= */
+
+/* Reset page to simple printable format */
+body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-family: "Times New Roman", serif !important;
+}
+
+/* Expand layout for full-page printing */
+#container,
+header,
+section,
+footer,
+article {
+    width: 100% !important;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Remove ALL background images */
+header,
+section,
+article,
+body {
+    background: #ffffff !important;
+    background-image: none !important;
+}
+
+/* Hide navigation (menu) */
+nav {
+    display: none !important;
+}
+
+/* Hide footer as instructed */
+footer {
+    display: none !important;
+}
+
+/* Make article content fill printable width */
+article {
+    width: 95% !important;
+    margin: 0 auto !important;
+    padding: 10px 0 !important;
+    background: none !important;
+    color: #000000 !important;
+    text-align: left !important;
+}
+
+/* Ensure headings print clearly */
+article h1,
+article h2,
+article h3 {
+    color: #000000 !important;
+    margin-top: 15px;
+}
+
+/* Text readability */
+article p {
+    line-height: 1.5;
+    margin-bottom: 12px;
+    color: #000000 !important;
+}
+
+/* Remove floats so text prints in order */
+#miniTribute .miniTributeImg,
+#thumbs img,
+#image img {
+    float: none !important;
+    margin: 10px auto !important;
+    display: block !important;
+}
+
+/* Remove all decorative borders */
+#thumbs,
+#image,
+#thumbs img,
+#image img,
+#miniTribute img {
+    border: none !important;
+    background: none !important;
+}
+
+/* Ensure main featured image scales nicely */
+#image img {
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* Remove boxes around thumbs and containers */
+#thumbs,
+#image {
+    width: 100% !important;
+    padding: 0 !important;
+    background: none !important;
+    border: none !important;
+    text-align: center !important;
+}
+
+/* Remove logo float for print */
+header img#logoImg {
+    float: none !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+/* Force simple black underlined links */
+a,
+a:visited,
+a:hover {
+    color: #000000 !important;
+    text-decoration: underline !important;
+}
+
+/* REQUIRED FOR FULL CREDIT: Show URL after each link */
+a::after {
+    content: " (" attr(href) ") ";
+    font-size: 0.9em;
+}

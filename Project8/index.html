@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Extreme Honeymoons</title>
+  <style>
+    body {
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      background-color: #f0f6f9;
+      color: #004d73;
+      margin: 0;
+      padding: 2rem;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    img {
+      display: block;
+      margin: 1rem auto;
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #004d73;
+    }
+    p, a {
+      text-align: center;
+      color: #0077aa;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Extreme Honeymoons</h1>
+    <img src="Images/Logo.png" 
+         alt="Extreme Honeymoons pixel-sun logo">
+  </header>
+
+  <main>
+
+    <!-- IMAGE MAP (real, working hotspot map) -->
+    <img src="Images/mymap.png"
+     alt="Pixel brochure navigation"
+     width="700"
+     height="700"
+     usemap="#mainmap">
+	  <map name="mainmap">
+
+  <!-- HOME brochure (top-left) -->
+  <area shape="poly"
+        coords="80,75, 245,35, 260,260, 95,305"
+        href="Home.html"
+        alt="Home">
+
+  <!-- ABOUT US brochure (top-right) -->
+  <area shape="poly"
+        coords="455,40, 615,80, 595,300, 440,255"
+        href="AboutUs.html"
+        alt="About Us">
+
+  <!-- TRIBUTES brochure (bottom-left) -->
+  <area shape="poly"
+        coords="70,350, 295,300, 320,510, 95,560"
+        href="Tributes.html"
+        alt="Tributes">
+
+  <!-- FAVORITE LINKS brochure (bottom-right) -->
+  <area shape="poly"
+        coords="410,330, 640,380, 615,590, 385,545"
+        href="Links.html"
+        alt="Favorite Links">
+
+  <!-- CUSTOMER SURVEY brochure (bottom-center) -->
+  <area shape="poly"
+        coords="285,365, 410,370, 395,610, 275,600"
+        href="Survey.html"
+        alt="Customer Survey">
+
+</map>
+
+
+    <!-- HOTSPOTS (YOU ONLY CHANGE COORDS) -->
+    <map name="mainmap">
+
+      <!-- Home -->
+      <area shape="rect" coords="PUT-YOUR-HOME-COORDS-HERE"
+            href="Home.html"
+            alt="Go to Home Page"
+            title="Home">
+
+      <!-- About Us -->
+      <area shape="rect" coords="PUT-YOUR-ABOUTUS-COORDS-HERE"
+            href="AboutUs.html"
+            alt="Learn About Us"
+            title="About Us">
+
+      <!-- Tributes -->
+      <area shape="rect" coords="PUT-YOUR-TRIBUTES-COORDS-HERE"
+            href="Tributes.html"
+            alt="Read Customer Tributes"
+            title="Tributes">
+
+      <!-- Survey -->
+      <area shape="rect" coords="PUT-YOUR-SURVEY-COORDS-HERE"
+            href="Survey.html"
+            alt="Take the Customer Survey"
+            title="Survey">
+
+      <!-- Favorite Links -->
+      <area shape="rect" coords="PUT-YOUR-LINKS-COORDS-HERE"
+            href="Links.html"
+            alt="View Favorite Links"
+            title="Favorite Links">
+
+    </map>
+
+  </main>
+</body>
+</html>
